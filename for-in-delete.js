@@ -97,7 +97,15 @@ const double = ((obj)=> {
 
 //Code Here
 
-
+const secrets = ((obj) =>{
+  let ret = '';
+  for (let key in obj){
+    if (key.startsWith('sh')) {
+      ret = ret + obj[key]
+    }
+  }
+  return ret
+  });
 
 
 
