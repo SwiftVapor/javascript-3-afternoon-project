@@ -82,7 +82,7 @@ const double = ((obj)=> {
   for (let key in obj){
     obj[key] = obj[key]*2
     }
-    return obj 
+    return obj;
 });
 
 ////////// PROBLEM 4 //////////
@@ -104,7 +104,7 @@ const secrets = ((obj) =>{
       ret = ret + obj[key]
     }
   }
-  return ret
+  return ret;
   });
 
 
@@ -138,7 +138,10 @@ const secrets = ((obj) =>{
 
 //Code Here
 
-
+var removePassword = ((obj)=>{
+  delete obj.password
+  return obj
+})
 
 ////////// PROBLEM 6 //////////
 
@@ -157,7 +160,11 @@ var deleteTheBigNumbers = {
 
 //Code Here
 
-
+for (let key in deleteTheBigNumbers){
+  if (deleteTheBigNumbers[key] > 100 ){
+  delete deleteTheBigNumbers[key];
+}
+}
 
 ////////// PROBLEM 7 //////////
 
@@ -170,7 +177,14 @@ var deleteTheBigNumbers = {
 
 //Code Here
 
-
+let startsWithK = ((obj) => {
+  for (let key in obj){
+    if (key.startsWith ('k')){
+       delete obj[key]
+    }
+  }
+  return obj
+});
 
 ////////// PROBLEM 8 //////////
 
@@ -185,4 +199,11 @@ var deleteTheBigNumbers = {
 
 //Code Here
 
-
+let hiddenTreasure = ((obj) =>{
+  for ( let key in obj){
+    if (obj[key].includes('treasure')==false){
+      delete obj[key]
+    }
+  }
+  return obj
+})

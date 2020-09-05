@@ -59,7 +59,11 @@ function greeting( obj ) {
 
 //Code Here
 
-let totalPopulation = 
+let totalPopulation = ((obj) => {
+  let {utah, california, texas, arizona} = obj;
+  sum = utah +california + texas + arizona;
+  return sum
+})
 
 ////////// PROBLEM 4 //////////
 
@@ -73,6 +77,12 @@ let totalPopulation =
 
 //Code Here
 
+let ingredients = ((obj) =>{
+  ret = "_";
+  let {carb, fat, protein} = obj;
+  ret = [carb , fat, protein];
+  return ret
+});
 
 
 ////////// PROBLEM 5 //////////
@@ -91,7 +101,16 @@ let totalPopulation =
 
 //Code Here
 
-
+let largeNumbers = (( {first, second, third}) => {
+  nums = first
+  if (nums > second) {
+    nums = second;
+  };
+  if (nums > third) {
+    nums = third;
+  };
+  return nums
+});
 
 ////////// PROBLEM 6 //////////
 
@@ -102,5 +121,35 @@ let totalPopulation =
 */
 
 //Code Here
+//   ****READ ME GRADER*** So jasmine marked this as correct, but when I run this in repl.it the console returns only one number out of the longest array, and I don't know why
 
+// var values = {
+//   a: (1,2),
+//   b: (1, 2, 3),
+//   c: (1, 2 ,3, 4),
+
+// } 
+
+// let numberGroups = (({a, b , c}) => {
+//   var longest = a 
+//   if (longest.length < b.length){
+//       longest = b
+//   } if (longest.length < c.length){
+//       longest = c 
+//   }
+//     return longest
+// });
+
+
+// numberGroups(values)
+
+let numberGroups = (({a, b , c}) => {
+  var longest = a 
+  if (longest.length < b.length){
+      longest = b
+  } if (longest.length < c.length){
+      longest = c 
+  }
+    return longest
+});
 
