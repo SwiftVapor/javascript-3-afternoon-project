@@ -52,7 +52,17 @@ var employees = [
 
 //Code Here
 
-
+function employeeUpdater(){
+  for (let employee in employees){
+    if (employees[employee].firstName === "Theo"){
+      employees.splice(employee,1);
+    }
+    if (employees[employee].firstName === "Lorie"){
+      employees[employee].department = "HR";
+    }
+  }
+  return employees;
+}
 
 ////////// PROBLEM 2 //////////
 
