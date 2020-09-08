@@ -52,7 +52,7 @@ var employees = [
 
 //Code Here
 
-function employeeUpdater(){
+let employeeUpdater =(() => {
   for (let employee in employees){
     if (employees[employee].firstName === "Theo"){
       employees.splice(employee,1);
@@ -62,7 +62,7 @@ function employeeUpdater(){
     }
   }
   return employees;
-}
+});
 
 ////////// PROBLEM 2 //////////
 
@@ -80,7 +80,15 @@ var workplaceAccidents = [12, 56, 44, 3, 29, 56, 56, 3, 7, 12];
 
 //Code Here
 
-
+let removeDuplicates = (() => {
+  let unique = [];
+  for (let i = 0; i < workplaceAccidents.length; i++){
+    if (unique.indexOf (workplaceAccidents[i])=== -1){
+        unique.push(workplaceAccidents[i]);
+    }
+  }
+  return unique;
+});
 
 ////////// PROBLEM 3 //////////
 
@@ -107,10 +115,9 @@ var cat = {
 */
 
 //Code Here
-var grumpyActivity;
-var fluffy2ndFriend;
+fluffy2ndFriend = cat.catFriends[1].name
 
-
+grumpyActivity = cat.catFriends[0].activities[1]
 
 ////////// PROBLEM 4 //////////
 
@@ -149,8 +156,14 @@ var myCar = {
 */
 
 //Code Here
-
-
+// let recordCleaner = myCar.accidents.forEach(function(ele){
+//   ele.atFaultForAccident = false;
+// });
+let recordCleaner = (() => {
+    myCar.accidents.forEach (function(ele){
+      ele.atFaultForAccident = false;
+    })
+});
 
 ////////// PROBLEM 5 //////////
 
@@ -169,4 +182,21 @@ var numsArr = [ [1, 2, 3, 4], [5, 6], [7, 8, 9, 10, 11]];
 
 //Code Here
 
-
+let looper = (() => {
+  console.log ('am I here')
+  for (let i in numsArr){
+          console.log ('am I here '+ 'i '+i)
+      for (let j = 0; j < numsArr[i].length; j++){
+              console.log ('am I here ' + 'j '+ j)
+          if  (numsArr[i][j] % 2 === 0){
+              numsArr[i][j] = "even"
+              console.log ('am I even')
+          } 
+          if (numsArr[i][j] % 2 === 1){
+              numsArr[i][j] = "odd"
+              console.log ('am I odd')
+          }
+      }
+  }
+return numsArr
+});
